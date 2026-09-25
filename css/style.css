@@ -233,3 +233,11 @@ footer {
   }
 
 }
+.article-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-link:hover {
+  text-decoration: underline;
+}
