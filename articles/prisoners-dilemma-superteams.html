@@ -8,7 +8,203 @@
   <title>The Prisoner's Dilemma of NBA Superteams | The Net Effect</title>
 
   <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Article-specific styling -->
+  <style>
+
+    .article-links {
+      margin: 20px 0 30px;
+    }
+
+    .article-links a {
+      color: #111;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .article-links a:hover {
+      text-decoration: underline;
+    }
+
+    .article-body h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      margin-top: 35px;
+      margin-bottom: 18px;
+    }
+
+    /* Prisoner's Dilemma table */
+
+    .payoff-wrapper {
+      margin: 40px 0;
+      overflow-x: auto;
+    }
+
+    .payoff-wrapper table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .payoff-wrapper th,
+    .payoff-wrapper td {
+      border: 1px solid #bbb;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .payoff-wrapper th {
+      background: #f1f1ee;
+      font-weight: bold;
+    }
+
+    .payoff-caption {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* Equation */
+
+    .equation-block {
+      margin: 35px 0;
+      padding: 30px;
+      background: #f1f1ee;
+      border-left: 3px solid #111;
+      text-align: center;
+    }
+
+    .equation-block p {
+      margin: 8px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.2rem;
+    }
+
+    .equation-main {
+      font-size: 1.6rem !important;
+      margin-top: 20px !important;
+    }
+
+    /* Dataset callout */
+
+    .data-callout {
+      margin: 45px 0;
+      padding: 28px;
+      border-top: 3px solid #111;
+      border-bottom: 1px solid #ccc;
+      background: #f1f1ee;
+    }
+
+    .data-callout h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.6rem;
+      margin: 8px 0 10px;
+    }
+
+    .data-callout p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .data-callout-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .data-callout a {
+      color: #111;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .data-callout a:hover {
+      text-decoration: underline;
+    }
+
+    /* Chart placeholders */
+
+    .figure-placeholder {
+      margin: 45px 0;
+      padding: 70px 25px;
+      border: 1px dashed #999;
+      text-align: center;
+      background: #fafaf8;
+    }
+
+    .figure-placeholder strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .figure-placeholder span {
+      display: block;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    .article-figure {
+      margin: 45px 0;
+    }
+
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .article-figure figcaption {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* Short emphasis moments */
+
+    .article-emphasis {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem !important;
+      line-height: 1.5 !important;
+      margin: 40px 0 !important;
+    }
+
+    /* Caveat section */
+
+    .caveat-section {
+      margin-top: 55px;
+      padding-top: 30px;
+      border-top: 1px solid #ccc;
+    }
+
+    @media (max-width: 750px) {
+
+      .payoff-wrapper th,
+      .payoff-wrapper td {
+        padding: 12px;
+        font-size: 0.8rem;
+      }
+
+      .equation-block {
+        padding: 22px 15px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
@@ -17,7 +213,8 @@
     <p>Basketball, economics, and everything in between.</p>
   </header>
 
-   <nav>
+
+  <nav>
     <a href="../index.html">Home</a>
     <a href="../economics.html">Economics</a>
     <a href="../basketball.html">Basketball</a>
@@ -25,9 +222,12 @@
     <a href="../about.html">About</a>
   </nav>
 
+
   <main class="article-page">
 
     <article>
+
+      <!-- ARTICLE HEADER -->
 
       <div class="article-category">
         NBA Economics · Game Theory
@@ -39,93 +239,1159 @@
 
       <p class="article-subtitle">
         Why NBA teams can rationally chase superstar-heavy rosters even when
-        the collective result leaves teams with less flexibility, greater risk,
-        and surprisingly little competitive advantage.
+        the arms race creates new costs, risks, and roster fragility.
       </p>
 
       <div class="article-byline">
-        By S. Brunello
+        By S. Brunello · September 2026
+      </div>
+
+      <div class="article-links">
+        <a href="../data.html">
+          View the Dataset →
+        </a>
       </div>
 
       <hr>
 
+
       <div class="article-body">
 
+
+        <!-- INTRODUCTION -->
+
         <p>
-          Imagine two NBA teams entering an offseason with championship
-          aspirations. Each faces essentially the same decision: aggressively
-          pursue another superstar, or trust the roster already in place.
+          NBA teams don’t build their rosters in a vacuum. Every superstar
+          signing, blockbuster trade, or all-in move changes the decisions
+          facing all the teams in the league. Once one team decides to
+          escalate, everyone else has to choose to either keep up or risk
+          being left behind.
         </p>
 
         <p>
-          If neither team makes the move, both may preserve depth, financial
-          flexibility, and future assets. But if one team adds another star
-          while the other stands still, the team that stayed conservative
-          risks falling behind.
+          This is where the Prisoner’s Dilemma comes in.
         </p>
 
         <p>
-          That creates a familiar economic problem.
-        </p>
-
-        <h2>A Basketball Prisoner's Dilemma</h2>
-
-        <p>
-          In game theory, a prisoner's dilemma occurs when individually
-          rational decisions can produce a collectively worse outcome.
-          NBA roster construction can sometimes create a similar incentive.
+          I, like most other Economics students (I assume), was thrown this
+          thought experiment early on in my academic career. It took me a few
+          years of scrambling through courses to come back to it, but it turns
+          out it’s a pretty useful way of thinking about how NBA teams respond
+          to one another.
         </p>
 
         <p>
-          Teams do not build their rosters in isolation. Every major trade,
-          signing, and superstar pairing changes the incentives facing
-          competing teams.
+          Before getting into that, though, it’s probably worth explaining
+          what the Dilemma is.
         </p>
 
-        <div class="article-placeholder">
-          PAYOFF MATRIX / GRAPH WILL GO HERE
+
+        <!-- PRISONER'S DILEMMA -->
+
+        <h2>The Prisoner’s Dilemma</h2>
+
+        <p>
+          The original dilemma has a few variations, but for the sake of
+          argument we can keep it simple. Two members of a criminal gang are
+          arrested and separated. The police do not have enough evidence to
+          convict either of them on the main charge, so if both stay silent
+          they will each serve one year on a lesser offence.
+        </p>
+
+        <p>
+          However, each prisoner is offered the chance to testify against the
+          other. If one testifies while the other stays silent, the one who
+          talks goes free while the other serves three years. If both testify,
+          they each serve two.
+        </p>
+
+        <p>
+          Since neither prisoner can communicate with the other, each has to
+          make the decision independently. If we assume both are rational and
+          only care about minimizing their own sentence, testifying becomes
+          the best response either way: if the other stays silent, you go
+          free, and if they testify, you serve two years instead of three.
+        </p>
+
+        <p>
+          The problem is that when both follow that logic, they each end up
+          serving two years, even though both staying silent would have left
+          them better off.
+        </p>
+
+
+        <div class="payoff-wrapper">
+
+          <table>
+
+            <tr>
+              <th></th>
+              <th>Prisoner B Stays Silent</th>
+              <th>Prisoner B Testifies</th>
+            </tr>
+
+            <tr>
+              <th>Prisoner A Stays Silent</th>
+              <td>
+                A: 1 year<br>
+                B: 1 year
+              </td>
+              <td>
+                A: 3 years<br>
+                B: 0 years
+              </td>
+            </tr>
+
+            <tr>
+              <th>Prisoner A Testifies</th>
+              <td>
+                A: 0 years<br>
+                B: 3 years
+              </td>
+              <td>
+                A: 2 years<br>
+                B: 2 years
+              </td>
+            </tr>
+
+          </table>
+
+          <div class="payoff-caption">
+            A basic Prisoner’s Dilemma. Each prisoner has an individual
+            incentive to testify even though mutual silence produces the
+            better collective outcome.
+          </div>
+
         </div>
 
-        <h2>Why Teams Keep Chasing Stars</h2>
 
         <p>
-          The incentive is easy to understand. Elite players are scarce,
-          championships are valuable, and front offices operate in an
-          environment where standing still can itself be risky.
+          How is this relevant to the NBA, you ask? It may be helpful here
+          to look at a specific example.
+        </p>
+
+
+        <!-- CAVS VS WARRIORS -->
+
+        <h2>Cleveland vs. Golden State</h2>
+
+        <p>
+          In the summer of 2014, LeBron is returning to the Cleveland
+          Cavaliers after four years in Miami. Cleveland already has Kyrie
+          Irving and quickly makes it clear that it is not interested in
+          waiting around, trading No. 1 pick Andrew Wiggins, Anthony Bennett,
+          and draft capital for Kevin Love.
         </p>
 
         <p>
-          The interesting question is not simply whether superteams work.
-          It is why teams may continue pursuing them even when doing so
-          introduces substantial costs.
-        </p>
-
-        <h2>The Cost of Going All In</h2>
-
-        <p>
-          Superstar-heavy teams can sacrifice roster depth, draft capital,
-          salary-cap flexibility, and resilience to injuries.
+          Later in the season, they add J.R. Smith and Timofey Mozgov,
+          rounding out a roster built to compete immediately.
         </p>
 
         <p>
-          Those trade-offs become particularly important under modern NBA
-          salary-cap rules, where expensive rosters face increasingly severe
-          restrictions.
+          At this stage, though, Cleveland is not reacting to Golden State.
+          This is simply a classic “win-now” strategy: sacrifice cheap young
+          talent and future assets for an established star while LeBron is
+          still at his peak.
         </p>
-
-        <h2>Coming Next</h2>
 
         <p>
-          This article will look at several prominent NBA superteams,
-          including Miami, Golden State, and Brooklyn, and use simple game
-          theory to explain why the superstar arms race persists.
+          Golden State, meanwhile, is taking a very different route. The
+          Warriors had made the playoffs in each of the previous two seasons,
+          but they were still developing internally rather than assembling
+          stars from elsewhere.
         </p>
+
+        <p>
+          Mark Jackson had just been replaced by Steve Kerr, Draymond Green
+          was becoming a full-time starter, and the now-iconic
+          Curry-Klay-Green core was beginning to take shape. Of course, we
+          know what that core eventually becomes, but let’s not get ahead of
+          ourselves.
+        </p>
+
+
+        <h3>2014–15</h3>
+
+        <p>
+          Let’s return to the beginning of the 2014–15 season. To recap, on
+          one side of the ring we have the star-studded Cavs, carrying massive
+          expectations and widely projected to contend for the title.
+        </p>
+
+        <p>
+          In the other corner are the Warriors, viewed as a dangerous playoff
+          team but still surrounded by uncertainty under first-year head coach
+          Steve Kerr.
+        </p>
+
+        <p>
+          As the season progresses, though, Golden State quickly proves it
+          belongs in a different category. The Warriors finish with a
+          league-best 67 wins before meeting Cleveland in the Finals and
+          taking the championship in six games, 4–2.
+        </p>
+
+
+        <h3>2015–16</h3>
+
+        <p>
+          For the 2015–16 season, Cleveland had to adapt to Golden State’s
+          style of play. The Warriors’ biggest strengths were their
+          three-point shooting and small, switchable lineups, which created
+          constant spacing, mismatches, and fast-paced scoring opportunities.
+        </p>
+
+        <p>
+          Cleveland responded by building a roster that could better survive
+          that kind of game. They added veteran wing Richard Jefferson and
+          traded for Channing Frye, a 6’11” big who could stretch the floor
+          and pull opposing centers away from the paint, opening driving lanes
+          for LeBron and Kyrie.
+        </p>
+
+        <p>
+          These moves were not made solely with Golden State in mind, but it
+          is hard to ignore how clearly they helped Cleveland match up with
+          the Warriors’ style.
+        </p>
+
+        <p>
+          Meanwhile, Golden State simply doubled down on what had worked the
+          year before, and it worked even better. The Warriors finished with a
+          league-record 73–9 record, Curry became the first unanimous MVP, and
+          Golden State entered the Finals as the favorite.
+        </p>
+
+        <p>
+          Then the unexpected happened.
+        </p>
+
+        <p>
+          LeBron and Kyrie exploded offensively, Tristan Thompson punished
+          Golden State on the glass, and Cleveland completed the comeback to
+          win the championship 4–3.
+        </p>
+
+
+        <h3>Summer 2016</h3>
+
+        <p>
+          Golden State still had an incredible lineup despite the loss in the
+          Finals. They had Curry, Thompson, Green, and Iguodala, along with a
+          coach who already knew exactly how to get the best out of them.
+        </p>
+
+        <p>
+          You would expect them to improve the bench, tweak the center
+          rotation, and run it back.
+        </p>
+
+        <p class="article-emphasis">
+          Instead, they add Kevin Durant.
+        </p>
+
+        <p>
+          It is important to note here that a major reason Golden State was
+          even able to make this move was the sudden jump in the salary cap to
+          $94.143 million following the NBA’s new television deal.
+        </p>
+
+        <p>
+          The cap increased by roughly 34.5% in a single offseason, creating
+          an unusual amount of space at exactly the right time for the
+          Warriors.
+        </p>
+
+        <p>
+          Suddenly, Golden State could roll out some combination of Curry,
+          Klay, Durant, Green, and Iguodala, creating a very serious problem
+          for Cleveland.
+        </p>
+
+        <p>
+          The Cavs, already loaded with expensive stars, did not have the
+          luxury of simply responding by adding another MVP of their own.
+          Instead, they tried to increase their firepower around the margins,
+          most notably by trading for Kyle Korver.
+        </p>
+
+        <p>
+          Essentially, Cleveland could not completely stop the Warriors’
+          offense, so they tried to build enough shooting of their own to keep
+          up with it.
+        </p>
+
+        <p>
+          But it wasn’t enough.
+        </p>
+
+        <p>
+          Golden State took the 2017 Finals 4–1, with Durant winning Finals
+          MVP, and the arms race had officially moved to another level.
+        </p>
+
+        <p>
+          At this point, Cleveland’s problem wasn’t simply how they could
+          improve their roster. They had to keep pace with a rival that had
+          moved the bar seemingly beyond reach.
+        </p>
+
+        <p>
+          Adding Korver made the Cavs better in absolute terms, but the NBA
+          isn’t an absolute game. Teams are only as good as their competitors’
+          weaknesses, and the Warriors seemed to have none.
+        </p>
+
+        <p>
+          The payoff from investing in a stronger team depends on both how
+          much better you become and how your competitors are improving at the
+          same time.
+        </p>
+
+        <p>
+          Korver made Cleveland a better team, but that improvement meant far
+          less once Golden State had added Durant.
+        </p>
+
+        <p>
+          This is where we begin to see the Prisoner’s Dilemma take shape,
+          where both teams have an incentive to keep escalating because
+          neither can be the one that stands still.
+        </p>
+
+
+        <!-- ANALYSIS -->
+
+        <h2>So What Does the Data Say?</h2>
+
+        <p>
+          Having seen the arms race play out in real time, we can finally
+          bring this all back to economics.
+        </p>
+
+        <p>
+          The Cavs and Warriors are obviously only one example, but they give
+          us a pretty clean way of thinking about how superteams can affect
+          both their direct competitors and the league around them.
+        </p>
+
+        <p>
+          For four straight seasons, the same two teams met in the Finals.
+          That alone should tell us that something unusual was happening at
+          the very top of the league.
+        </p>
+
+        <p>
+          But before getting too far ahead of ourselves, let’s go back to
+          basics.
+        </p>
+
+        <p>
+          For the purposes of this article, I am defining a superteam as a
+          roster built around multiple established stars whose combined talent
+          gives them a major competitive advantage over the rest of the
+          league.
+        </p>
+
+        <p>
+          The logic behind building one is pretty straightforward. Teams want
+          to win championships, and adding another superstar should, in
+          theory, increase the chances of doing exactly that.
+        </p>
+
+
+        <!-- EXPECTED VALUE EQUATION -->
+
+        <div class="equation-block">
+
+          <p>
+            If winning the Championship is represented by
+            <strong>C = 1</strong>
+          </p>
+
+          <p>
+            and not winning by
+            <strong>C = 0</strong>,
+          </p>
+
+          <p class="equation-main">
+            E[C] = P(Championship)
+          </p>
+
+        </div>
+
+
+        <p>
+          That is really just a slightly more complicated way of saying that
+          if a team wants to maximize the expected value of its season, it
+          should try to maximize its probability of winning the title.
+        </p>
+
+        <p>
+          When a team commits cap space, draft assets, roster depth, or future
+          flexibility to another star, this is what it is ultimately chasing:
+          a larger P(Championship).
+        </p>
+
+        <p>
+          And there is an obvious reason why teams are willing to do this.
+          Adding another superstar can raise a team’s ceiling far beyond what
+          could realistically be achieved by tweaking the eighth man in the
+          rotation.
+        </p>
+
+        <p>
+          But the trade-off, at least in theory, is that more and more of the
+          team’s value becomes tied to a small number of players.
+        </p>
+
+        <p>
+          Just look at the 2021 Nets. Brooklyn had Durant, Harden, and Irving,
+          a trio that on paper looked borderline unfair.
+        </p>
+
+        <p>
+          But when injuries took Harden and Irving out of the equation, Durant
+          was suddenly left carrying a roster whose entire ceiling had been
+          built around the presence of all three.
+        </p>
+
+        <p>
+          It’s fairly simple math really. If one player disappears from a
+          balanced roster where the value is spread more evenly, the decline
+          may be manageable.
+        </p>
+
+        <p>
+          If one superstar disappears from a team whose entire identity is
+          built around three of them, a huge share of its offensive creation,
+          shooting, or defensive value disappears too.
+        </p>
+
+        <p>
+          In other words, superteams are theoretically trading some robustness
+          for a much higher ceiling.
+        </p>
+
+        <p>
+          And that trade-off matters most in the playoffs. Rotations get
+          shorter, weaknesses get targeted more aggressively, and one missing
+          star can matter far more than it did during a random Tuesday night
+          game in January.
+        </p>
+
+        <p>
+          Of course, simply stating all of this as fact would be a bit lazy,
+          so I wanted to see whether the numbers actually backed it up.
+        </p>
+
+        <p>
+          To do this, I looked at 11 separate team-seasons, made up of six
+          superteam cases and five comparison teams.
+        </p>
+
+        <p>
+          I used four main measures: Core-3 Win Share concentration, average
+          core Net On/Off, core availability, and value-weighted games missed.
+        </p>
+
+
+        <!-- DATASET CALLOUT -->
+
+        <div class="data-callout">
+
+          <div class="card-category">
+            The Data Room
+          </div>
+
+          <h3>Want to see the numbers?</h3>
+
+          <p>
+            The full dataset, player-level data, methodology, variable
+            definitions, source links, and analysis dashboard used for this
+            article are available in The Data Room.
+          </p>
+
+          <div class="data-callout-links">
+
+            <a href="../data.html">
+              Explore the Dataset →
+            </a>
+
+            <a
+              href="../data/superteams/nba_superteam_fragility_dataset.xlsx"
+              download>
+              Download XLSX ↓
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- FIGURE 1 -->
+
+        <div class="figure-placeholder">
+
+          <strong>
+            Figure 1
+          </strong>
+
+          <span>
+            Average Preseason Implied Championship Probability:
+            Superteams vs. Comparison Teams
+          </span>
+
+        </div>
+
+
+        <!--
+        WHEN YOU UPLOAD THE CHART IMAGE, REPLACE THE PLACEHOLDER ABOVE WITH:
+
+        <figure class="article-figure">
+
+          <img
+            src="../images/articles/superteams/title-probability.png"
+            alt="Average preseason implied championship probability for superteams and comparison teams"
+          >
+
+          <figcaption>
+            Figure 1. Average preseason implied championship probability:
+            Superteams vs. comparison teams.
+          </figcaption>
+
+        </figure>
+        -->
+
+
+        <p>
+          The first result was exactly what you would expect.
+        </p>
+
+        <p>
+          The superteams in my sample entered their seasons with an average
+          implied championship probability of roughly 35%, compared with about
+          7% for the comparison teams.
+        </p>
+
+        <p>
+          That is a pretty massive gap.
+        </p>
+
+        <p>
+          So whatever else we may say about the long-term risks of superteams,
+          they seem to accomplish the thing they are actually built to do, as
+          they raise expectations of winning the title.
+        </p>
+
+        <p>
+          Now, it is worth noting that these probabilities are not some
+          objective truth handed down from the basketball gods.
+        </p>
+
+        <p>
+          They are betting-market expectations, so not guaranteed outcomes.
+          Still, they give us a useful way of measuring how much championship
+          value the market thought these rosters had before the season even
+          began.
+        </p>
+
+        <p>
+          This is where I expected the rest of the data to follow the same
+          story.
+        </p>
+
+        <p class="article-emphasis">
+          It did not.
+        </p>
+
+
+        <!-- VALUE CONCENTRATION -->
+
+        <h2>Is the Value Really More Concentrated?</h2>
+
+        <p>
+          My original assumption was that superteams would have a much larger
+          share of their value concentrated in their three best players.
+        </p>
+
+        <p>
+          That would make sense, right? If you build a roster around three
+          superstars, surely those three players should account for far more
+          of the team’s production than they would on a more balanced
+          contender.
+        </p>
+
+        <p>
+          Instead, the core three accounted for roughly 48% of team wins
+          through Win Shares among the superteams in my sample, compared with
+          roughly 50% among the comparison teams.
+        </p>
+
+        <p>
+          On/off performance tells basically the same story. The average
+          core-player Net On/Off was +7.1 for the superteams and +7.7 for the
+          comparison group.
+        </p>
+
+
+        <!-- FIGURE 2 -->
+
+        <div class="figure-placeholder">
+
+          <strong>
+            Figure 2
+          </strong>
+
+          <span>
+            Core Value Concentration by Team-Season
+          </span>
+
+        </div>
+
+
+        <!--
+        REPLACE WITH THIS AFTER UPLOADING THE CHART:
+
+        <figure class="article-figure">
+
+          <img
+            src="../images/articles/superteams/core-value-concentration.png"
+            alt="Core value concentration by NBA team-season"
+          >
+
+          <figcaption>
+            Figure 2. Core Value Concentration by Team-Season.
+          </figcaption>
+
+        </figure>
+        -->
+
+
+        <p>
+          So this was the first point where the data forced me to admit that
+          my original idea was too simple.
+        </p>
+
+        <p>
+          Superteams were not uniquely concentrated around their three best
+          players. In fact, some of the comparison teams were even more
+          statistically concentrated.
+        </p>
+
+        <p>
+          Denver is probably the clearest example. Nikola Jokic can create an
+          enormous amount of statistical concentration almost by himself, but
+          that does not mean the Nuggets were constructed in the same way as
+          the Durant Warriors or the Durant-Harden-Irving Nets.
+        </p>
+
+        <p>
+          This forced me to rethink what actually separates a superteam from
+          an ordinary contender.
+        </p>
+
+        <p>
+          Simply having three statistically important players clearly is not
+          enough. Teams like Denver can be heavily dependent on a small core
+          without ever going through the same kind of superstar aggregation.
+        </p>
+
+        <p>
+          The difference seems to lie less in where the value eventually ends
+          up and more in how aggressively the roster is constructed to put
+          that value there.
+        </p>
+
+        <p>
+          Superteams are created through major salary commitments, trades,
+          free-agent signings, and, quite often, the sacrifice of depth or
+          future flexibility elsewhere.
+        </p>
+
+        <p>
+          So, with my original Core-3 idea looking a bit shaky, I shifted my
+          focus towards what I was really trying to measure in the first
+          place:
+          <strong>fragility.</strong>
+        </p>
+
+
+        <!-- FRAGILITY -->
+
+        <h2>Does Building a Superteam Create Fragility?</h2>
+
+        <p>
+          Here, the difference becomes a little clearer.
+        </p>
+
+        <p>
+          Across the superteams in the sample, the three core players were
+          available for roughly 81% of their eligible games, compared with
+          around 85% for the comparison teams.
+        </p>
+
+        <p>
+          That is not some enormous gap, and I would not pretend that it is,
+          but the difference becomes more interesting once we look at
+          value-weighted games missed.
+        </p>
+
+        <p>
+          Superteams recorded an average value-weighted games-missed figure of
+          6.19, compared with 4.98 for the comparison teams.
+        </p>
+
+        <p>
+          The logic behind this measure is pretty simple because not every
+          missed game is equal.
+        </p>
+
+        <p>
+          Losing your twelfth man for ten games is not the same thing as
+          losing Kevin Durant for ten games.
+        </p>
+
+        <p>
+          A regular games-missed stat treats those two absences equally, when
+          the actual effect on the team obviously is not.
+        </p>
+
+        <p>
+          Value-weighted games missed tries to account for this by giving
+          greater weight to absences from more productive players.
+        </p>
+
+        <p>
+          Essentially, it asks a more useful question:
+          <strong>
+            how much actual team value disappears when these players are
+            unavailable?
+          </strong>
+        </p>
+
+
+        <!-- FIGURE 3 -->
+
+        <div class="figure-placeholder">
+
+          <strong>
+            Figure 3
+          </strong>
+
+          <span>
+            Value-Weighted Games Missed by Team-Season
+          </span>
+
+        </div>
+
+
+        <!--
+        REPLACE WITH THIS AFTER UPLOADING THE CHART:
+
+        <figure class="article-figure">
+
+          <img
+            src="../images/articles/superteams/value-weighted-games-missed.png"
+            alt="Value-weighted games missed by NBA team-season"
+          >
+
+          <figcaption>
+            Figure 3. Value-Weighted Games Missed by Team-Season.
+          </figcaption>
+
+        </figure>
+        -->
+
+
+        <h3>Back to Brooklyn</h3>
+
+        <p>
+          And once again, we arrive back at the 2021 Nets.
+        </p>
+
+        <p>
+          Brooklyn had the highest value-weighted absence figure of any team
+          in my sample.
+        </p>
+
+        <p>
+          Durant, Harden, and Irving gave them an absurd ceiling when all
+          three were available, but that ceiling was only useful if all three
+          were actually on the court.
+        </p>
+
+        <p>
+          Their regular-season numbers already show how exposed the roster was
+          to star availability, and the playoffs gave us an even clearer
+          example of what that exposure could look like when injuries arrived
+          at the worst possible time.
+        </p>
+
+        <p>
+          Once Harden and Irving were compromised, the theoretical value of
+          having three stars did not disappear entirely, but a huge part of
+          it became inaccessible.
+        </p>
+
+        <p>
+          Brooklyn still had Kevin Durant, which is a pretty good Plan B, but
+          the superteam they had built was no longer really a superteam in
+          practice.
+        </p>
+
+        <p>
+          Now, I should be clear about what these numbers do and do not tell
+          us.
+        </p>
+
+        <p>
+          They do not show that superteams cause injuries. That would be
+          ridiculous.
+        </p>
+
+        <p>
+          Injuries are random, the sample is small, and several of the
+          comparison teams were also heavily dependent on a small number of
+          stars.
+        </p>
+
+        <p>
+          The difference between 81% and 85% availability is also nowhere near
+          large enough for me to declare that all superteams are inherently
+          more fragile.
+        </p>
+
+        <p>
+          What the data does suggest is something narrower.
+        </p>
+
+        <p>
+          Superteams can raise the potential payoff enormously, but they also
+          leave teams exposed when a large share of that top-end value becomes
+          unavailable.
+        </p>
+
+
+        <!-- RETURN TO PRISONER'S DILEMMA -->
+
+        <h2>Back to the Prisoner’s Dilemma</h2>
+
+        <p>
+          This is where we should return to the Prisoner’s Dilemma.
+        </p>
+
+        <p>
+          A team may know that concentrating resources into a handful of stars
+          comes with risks. It may know that its bench will be weaker, its
+          flexibility will shrink, and that an injury to one star could
+          suddenly leave it without much of a Plan B.
+        </p>
+
+        <p>
+          But then imagine being Cleveland in 2017, facing off against the
+          Avengers assembled by the Warriors who take the form of Curry,
+          Durant, Thompson, and Green.
+        </p>
+
+        <p>
+          You could choose the safer option and keep more depth, protect your
+          future assets, and spread your value around the roster.
+        </p>
+
+        <p class="article-emphasis">
+          But you still have to beat Golden State. That’s the issue.
+        </p>
+
+        <p>
+          The safer roster may be better constructed in isolation, but the NBA
+          does not exist in isolation.
+        </p>
+
+        <p>
+          A team is only trying to be better than the team standing in front
+          of it.
+        </p>
+
+        <p>
+          If your rival has already pushed the talent threshold beyond what
+          your current roster can handle, chasing another star can remain the
+          rational response even if you know it creates new risks elsewhere.
+        </p>
+
+        <p>
+          That is the context in which the Prisoner’s Dilemma takes shape.
+        </p>
+
+        <p>
+          Each team has an incentive to escalate because neither wants to be
+          the one that stands still.
+        </p>
+
+        <p>
+          And if everyone responds the same way, the league can enter an arms
+          race where teams repeatedly sacrifice flexibility, depth, and future
+          resources because the alternative looks even worse.
+        </p>
+
+
+        <!-- SECOND APRON -->
+
+        <h2>The NBA’s Solution</h2>
+
+        <p>
+          Of course, the NBA has changed quite a bit since the peak of
+          Cavs-Warriors.
+        </p>
+
+        <p>
+          The 2023 CBA, and more specifically the introduction of the second
+          salary-cap apron, has changed the economics behind this arms race
+          quite significantly.
+        </p>
+
+        <p>
+          The league has not banned teams from collecting stars. That would
+          probably be both incredibly difficult and a bit ridiculous.
+        </p>
+
+        <p>
+          If you draft three future Hall of Famers, the NBA is not going to
+          make you give one back.
+        </p>
+
+        <p>
+          Instead, the league has changed the cost of continuing to escalate.
+        </p>
+
+        <p>
+          Teams that cross the second apron now face restrictions on several
+          of the tools they would normally use to keep improving an already
+          expensive roster. This includes limits on salary aggregation in
+          trades, certain exceptions, and future draft-pick flexibility.
+        </p>
+
+        <p>
+          The second apron was not introduced as some explicit “no more
+          superteams” rule, and I would not pretend that it was.
+        </p>
+
+        <p>
+          But the league has been fairly clear about its broader goal of
+          limiting the competitive advantages available to the highest-spending
+          teams and creating a more level playing field.
+        </p>
+
+        <p>
+          Adam Silver has also pointed to the NBA’s recent stretch of
+          different champions as evidence that the broader push toward
+          competitive balance has been working.
+        </p>
+
+        <p>
+          This is interesting because the second apron does not really attack
+          the superteam itself, rather the incentive structure around it.
+        </p>
+
+        <p>
+          Teams can still chase stars and they can still decide that a third
+          superstar is worth the cost. They can still escalate.
+        </p>
+
+        <p>
+          But now that escalation comes with much greater consequences for the
+          depth and flexibility needed to support those stars once they
+          arrive.
+        </p>
+
+        <p class="article-emphasis">
+          So, in a way, the NBA has changed the Prisoner’s Dilemma itself.
+        </p>
+
+        <p>
+          The incentive to match your rival’s star power still exists, but
+          the payoff from choosing to escalate is no longer as straightforward
+          as it once was.
+        </p>
+
+        <p>
+          I don’t think this means the NBA has ended the arms race, but it has
+          made joining it a more costly decision.
+        </p>
+
+
+        <!-- CONCLUSION -->
+
+        <h2>Conclusion</h2>
+
+        <p>
+          As I come to the end of writing this, I realize I got a bit too
+          wrapped up in the Cavs-Warriors story and left much of the analysis
+          crowded toward the end.
+        </p>
+
+        <p>
+          Hopefully, though, the history helped make the underlying point
+          clearer.
+        </p>
+
+        <p>
+          The original idea behind this analysis was that NBA superteams
+          resemble a Prisoner’s Dilemma: once one contender begins
+          accumulating stars, its rivals have an incentive to do the same,
+          even if repeated escalation leaves everyone sacrificing depth,
+          flexibility, and long-term stability.
+        </p>
+
+        <p>
+          The data supports part of that story.
+        </p>
+
+        <p>
+          Superteams in this sample entered seasons with dramatically higher
+          championship expectations, showing why teams are willing to accept
+          those costs in the first place.
+        </p>
+
+        <p>
+          Where my original assumption was too simple was in treating star
+          concentration itself as the defining source of fragility.
+        </p>
+
+        <p>
+          The comparison teams were often just as dependent on their best
+          players, and some were even more statistically concentrated.
+        </p>
+
+        <p>
+          The clearer risk appeared in availability.
+        </p>
+
+        <p>
+          When a superteam commits so much of its ceiling to a few elite
+          players, injuries to those players can erase much of the advantage
+          the roster was built to create.
+        </p>
+
+        <p>
+          So the problem is not that superteams are inherently worse, or even
+          inherently more fragile, but that the competitive environment can
+          make teams rationally accept greater costs and risks simply because
+          standing still may be worse.
+        </p>
+
+        <p>
+          The NBA’s second apron can therefore be seen as an attempt to alter
+          that payoff structure, making continued escalation more expensive
+          and giving teams a stronger reason to preserve depth and flexibility
+          rather than endlessly chase the next star.
+        </p>
+
+
+        <!-- LIMITATIONS -->
+
+        <section class="caveat-section">
+
+          <h2>A Few Important Caveats</h2>
+
+          <p>
+            This is where I will leave the analysis. I would, of course, be
+            remiss if I did not acknowledge its shortcomings.
+          </p>
+
+          <p>
+            Adding more teams would provide a more robust picture, as a single
+            extreme case, such as the 2021 Nets, can move the averages
+            substantially.
+          </p>
+
+          <p>
+            I also use a subjective definition of a superteam, which any
+            reasonable fan could disagree with, particularly in cases like the
+            2021–22 Lakers.
+          </p>
+
+          <p>
+            My sample is highly selective as well: I chose strong contenders
+            such as Denver and Boston to provide a meaningful comparison
+            group, but they are not representative of the NBA as a whole.
+          </p>
+
+          <p>
+            Some of my metrics are also noisy and heavily influenced by
+            teammates, opponents, bench quality, injuries, and substitution
+            patterns.
+          </p>
+
+          <p>
+            Much of the quantitative analysis comes from the regular season
+            because it provides more observations, even though my broader
+            argument is ultimately about championship risk.
+          </p>
+
+          <p>
+            Losing Kyrie Irving for three playoff games, for example, can
+            matter far more than losing him for fifteen games in January.
+          </p>
+
+          <p>
+            Maybe one day I will return to this with a larger sample and a
+            more rigorous model, but for now I am still a college student with
+            classes, clubs, and a dissertation that probably deserves more of
+            my attention.
+          </p>
+
+          <p>
+            Still, I will defend the analysis on one point: while it cannot
+            establish that constructing a superteam causes greater roster
+            fragility, it can show how star-heavy teams performed and how
+            exposed they became when their most valuable players were
+            unavailable.
+          </p>
+
+        </section>
+
+
+        <!-- END DATA LINK -->
+
+        <div class="data-callout">
+
+          <div class="card-category">
+            Data & Methodology
+          </div>
+
+          <h3>Dig into the analysis</h3>
+
+          <p>
+            The workbook behind this article includes the complete
+            team-season dataset, player-level data, methodology, variable
+            definitions, dashboard, and original source links.
+          </p>
+
+          <div class="data-callout-links">
+
+            <a href="../data.html">
+              Visit The Data Room →
+            </a>
+
+            <a
+              href="../data/superteams/nba_superteam_fragility_dataset.xlsx"
+              download>
+              Download the Dataset ↓
+            </a>
+
+          </div>
+
+        </div>
+
 
       </div>
 
     </article>
 
   </main>
+
 
   <footer>
     The Net Effect · Basketball, economics, and everything in between.
