@@ -552,3 +552,41 @@ footer {
 .dataset-links a:hover {
   text-decoration: underline;
 }
+/* REFERENCES */
+
+.references-section {
+  margin-top: 65px;
+  padding-top: 35px;
+  border-top: 2px solid #111;
+}
+
+.references-section h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.references-intro {
+  color: #666;
+  margin-bottom: 30px !important;
+}
+
+.reference-list p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  padding-left: 20px;
+  text-indent: -20px;
+  color: #444;
+}
+
+.reference-list a {
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.reference-list a:hover {
+  text-decoration: underline;
+}
