@@ -407,3 +407,61 @@ footer {
   }
 
 }
+/* CATEGORY + ABOUT PAGES */
+
+.page-intro {
+  max-width: 800px;
+  padding: 25px 0 55px;
+  border-bottom: 1px solid #ccc;
+}
+
+.page-intro h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4rem;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.page-intro p {
+  max-width: 700px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+.about-page {
+  max-width: 850px;
+}
+
+.about-section {
+  max-width: 700px;
+  padding: 50px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.about-section h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.coming-soon {
+  color: #777;
+  font-style: italic;
+}
+
+@media (max-width: 750px) {
+
+  .page-intro h1 {
+    font-size: 2.8rem;
+  }
+
+}
