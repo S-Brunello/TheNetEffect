@@ -590,3 +590,46 @@ footer {
 .reference-list a:hover {
   text-decoration: underline;
 }
+.dataset-sources {
+  max-width: 850px;
+  margin-top: 25px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 18px 0;
+}
+
+.dataset-sources summary {
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dataset-source-content {
+  margin-top: 25px;
+}
+
+.dataset-source-content h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 30px 0 15px;
+}
+
+.dataset-source-content ul {
+  padding-left: 20px;
+  line-height: 1.9;
+}
+
+.dataset-source-content a {
+  color: #111;
+}
+
+.dataset-source-download {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
