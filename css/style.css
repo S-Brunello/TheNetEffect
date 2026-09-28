@@ -482,3 +482,73 @@ footer {
   color: #555;
   line-height: 1.8;
 }
+/* DATA PAGE */
+
+.dataset-section {
+  margin-top: 65px;
+}
+
+.dataset-card {
+  border-top: 3px solid #111;
+  border-bottom: 1px solid #ccc;
+  padding: 28px 0 32px;
+  max-width: 850px;
+}
+
+.dataset-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.dataset-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.dataset-card p {
+  color: #555;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+.dataset-year {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #777;
+}
+
+.dataset-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.dataset-meta span {
+  border: 1px solid #aaa;
+  padding: 5px 9px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dataset-links {
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.dataset-links a {
+  color: #111;
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.dataset-links a:hover {
+  text-decoration: underline;
+}
